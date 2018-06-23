@@ -3,19 +3,36 @@
 <head>
     <title>Design-pattern-function-argument</title>
     <script>
-        function make() {
-            var argsLenth = arguments.length;
-            if (argsLenth === 2)
-                console.log("u preferred milk");
-            else
-                console.log("u preferred tea");
-        }
-        make('milk', 'sugar');
-        make('tea powder', 'milk', 'sugar');
+    /**
+     * Function argument desig pattern
+     * do the process based on the argumnet count
+     */
+    function make() {
+        var argsLenth = arguments.length;
+        if (argsLenth === 2)
+            alert("u preferred milk");
+        else
+            alert("u preferred tea");
+    }
+
+    function getIngredients() {
+        var ingredients = document.getElementById('ingredients').value;
+        if (ingredients === '0')
+            make('milk', 'sugar');
+        else
+            make('milk', 'sugar', 'tea powder');
+    }
     </script>
 </head>
 
 <body>
+    <h1>Milk & Tea maker</h1>
+    <img src="./../assets/images/milk-tea.jpg" />
+    <select id="ingredients">
+        <option value="0">milk, sugar</option>
+        <option value="1">milk, sugar, tea powder</option>
+    </select>
+    <button onclick="getIngredients()">Make</button>
 </body>
 
 </html>
